@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Python / LLM Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        header {
+            background-color: #161b22;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #58a6ff;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .blog-section {
+            flex: 2;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .links-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #161b22;
+            color: #c9d1d9;
+        }
+        .video-preview {
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .video-preview img {
+            width: 25%;
+            border: 1px solid #58a6ff;
+            border-radius: 5px;
+        }
+        .video-preview:hover img {
+            border-color: #79c0ff;
+        }
+        .video-preview p {
+            text-align: center;
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #161b22;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Django Python / LLM Academy</h1>
+    </header>
+    <div class="container">
+        <section class="blog-section">
+            <h2>Welcome to the Django Python / LLM Academy</h2>
+            <p>
+                This is a space for learning the fundamentals of Python, Django, and the latest advancements in Generative AI. 
+                Scroll through the content, and check out the links on the right to view interactive video lessons. The blog
+                covers essential topics in AI and programming that will help you level up your skills!
+            </p>
+            <p>
+                Topics include Generative AI, Django web development, and Python programming for large-scale language models.
+            </p>
+        </section>
+        <aside class="links-section">
+            <h3>Class Videos</h3>
+            <div class="video-preview" onclick="window.open('https://youtu.be/99jnctfKJwo', '_blank')">
+                <img src="https://img.youtube.com/vi/99jnctfKJwo/0.jpg" alt="Preface">
+                <p>Preface</p>
+            </div>
+            <div class="video-preview" onclick="window.open('https://youtu.be/-9r-HueYXmI', '_blank')">
+                <img src="https://img.youtube.com/vi/-9r-HueYXmI/0.jpg" alt="Lesson 1 Installing A Django Python Server">
+                <p>Lesson 1</p>
+            </div>
+            <div class="video-preview" onclick="window.open('https://youtu.be/GiaxQfxI6r8', '_blank')">
+                <img src="https://img.youtube.com/vi/GiaxQfxI6r8/0.jpg" alt="Lesson 1 Installing A Django Python Server Continued">
+                <p>Lesson 1 Continued</p>
+            </div>
+            <div class="video-preview" onclick="window.open('https://youtu.be/W8CvRmzdpjY', '_blank')">
+                <img src="https://img.youtube.com/vi/W8CvRmzdpjY/0.jpg" alt="Lesson 1 Installing A Django Python Server Final Part">
+                <p>Lesson 1 Final Part</p>
+            </div>
+            <div class="video-preview" onclick="window.open('https://youtu.be/iNl7wKaujKA', '_blank')">
+                <img src="https://img.youtube.com/vi/iNl7wKaujKA/0.jpg" alt="Lesson 2 Creating a Django Python Project">
+                <p>Lesson 2</p>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        &copy; 2024 Django Python / LLM Academy. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>data-democracy.ai</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'js/favico.png' %}" />
+</head>
+    <body data-base-url="{% static '' %}">
+        <!-- ... other HTML content ... -->
+  
+    <div id="fullpage-scroll">
+    <div id="custom-cursor" class="scroll-cursor">SCROLL DOWN</div>
+
+    <header>
+        <nav id="horizontal-nav">
+            <div>.             </div>
+            <a href="{% url 'auto_analyze' %}"><div>Auto Analyze</div></a>
+            <div>             </div>
+            <a href="{% url 'scan_websites' %}"><div>Scan Websites</div></a>
+            <div>             </div>
+            <a href="{% url 'scan_images' %}"><div>Scan Images</div></a>
+            <div>             </div>          
+            <div>About</div>
+            <div>             </div>            
+            <div>Contact       </div>
+            <div>             </div>  
+            <div>             </div>
+            <a href="{% url 'auto_analyze' %}"><div>Auto Analyze</div></a>
+            <div>             </div>
+            <div>             </div>  
+            <div>             </div>            
+            <a href="{% url 'scan_websites' %}"><div>Scan Websites</div></a>
+            <div>             </div>
+            <div>             </div>  
+            <div>             </div>            
+            <a href="{% url 'scan_images' %}"><div>Scan Images</div></a>
+            <div>             </div>    
+            <div>             </div>  
+            <div>             </div>                  
+            <div>About</div>
+            <div>             </div>            
+            <div>Contact       </div>
+            <div>             .</div>  
+            <div>.             </div>
+            <a href="{% url 'auto_analyze' %}"><div>Auto Analyze</div></a>
+            <div>             </div>
+            <div>             </div>  
+            <div>             </div>
+            <a href="{% url 'scan_websites' %}"><div>Scan Websites</div></a>
+            <div>             </div>
+            <div>             </div>  
+            <div>             </div>            
+            <a href="{% url 'scan_images' %}"><div>Scan Images</div></a>
+            <div>             </div>
+            <div>             </div>  
+            <div>             </div>            
+            <div>About</div>
+            <div>             </div>            
+            <div>Contact       </div>
+            <div>             .</div>  
+        </nav>
+    </header>
+
+    <main>
+        <!-- SVG container for the globe visualization -->
+        <div id="globe-container">
+            <svg width="100%" height="100%">
+                <defs>
+                  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+                    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10" result="glowColorMatrix"/>
+                    <feComposite in="SourceGraphic" in2="glowColorMatrix" operator="over"/>
+                  </filter>
+                  <linearGradient id="fireGradient" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#ff0" stop-opacity="0.8"/>
+                    <stop offset="50%" stop-color="#f00" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#800" stop-opacity="0.8"/>
+                  </linearGradient>
+                  <path id="electricPath" d="M0,0 L100,100" stroke="url(#fireGradient)" filter="url(#glow)"/>
+                </defs>
+            </svg>
+        </div>
+
+        <svg id="wavy-border" width="100%" height="150px" xmlns="http://www.w3.org/2000/svg">
+        <path d="" fill="none" stroke="#FFF" stroke-width="2"/>
+        </svg>
+
+        <div class="button-container">
+            <a href="{% url 'django_python' %}" class="futuristic-btn">Python Django/LLM Academy</a>
+            <a href="{% url 'auto_analyze' %}" class="futuristic-btn">Auto-Analyze Data</a>
+            <a href="{% url 'scan_websites' %}" class="futuristic-btn">Scan Websites with Keywords</a>
+            <a href="{% url 'scan_images' %}" class="futuristic-btn">Scan Images for Text</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div id="language-selector">
+            <!-- Language switch will go here -->
+        </div>
+    </footer>
+    </div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/globe.js' %}" defer></script>
+    <div id="popup" class="popup" style="display:none;">
+        <img src="{% static 'js/favico.png' %}" alt="Popup Image"/>
+    </div>
+    <div id="city-popup" class="popup">
+        <img src="{% static 'js/favico.png' %}" alt="Popup Image"/>
+    </div>
+
+    
+</body>
+</html>

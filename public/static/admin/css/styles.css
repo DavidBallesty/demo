@@ -1,0 +1,254 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  color: white;
+  background-color: black;
+  font-family: 'Arial', sans-serif;
+  
+}
+
+
+
+#horizontal-nav {
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 0;
+  transform: translateY(-50%); /* Align the center of the element with the vertical center */
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  z-index: 1000; 
+  font-size: 300%; /* 300% larger font size */
+  color: transparent; /* Make text transparent */
+  -webkit-text-stroke: 1px #FFF; /* White text outline */
+  text-align: center; /* Center text within each div */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;  
+  pointer-events: none; /* This will make the nav ignore pointer events */
+}
+#horizontal-nav div {
+  font-family: 'Nunito', sans-serif;
+  font-size: 80px; /* Adjusted for demonstration, reduce if necessary */
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #011110;
+  /*background-color: transparent; */
+  opacity: 0.4;
+  outline: 0.9;
+  line-height: 1.4;
+  margin: 0 10px; /* Added spacing between items */
+  padding: 10px 0; /* Padding for better visibility */
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevent the text from wrapping */
+}
+#horizontal-nav a div {
+  margin-right: 20px; /* Right margin for spacing between items */
+  padding: 10px 20px; /* Padding for larger clickable area and better aesthetics */
+  display: inline-block; /* Ensure this is set if it's not already */
+  text-align: center; /* Centers the text inside the clickable area */
+  pointer-events: all; /* This will enable pointer events on the actual nav items */
+
+}
+
+.scroll-content {
+  /* New class for scrollable content */
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+#button-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.italic-text {
+  font-style: italic;
+}
+
+button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: silver;
+  border-radius: 8px;
+}
+
+#language-selector {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+#language-selector button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+  border: 1px solid white;
+  background: none;
+}
+
+#language-selector button:hover {
+  background: yellow;
+}
+
+#language-selector button.active {
+  background: yellow;
+  color: black;
+}
+
+#language-selector button:focus {
+  outline: none;
+}
+
+#globe-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('public/static/admin/img/worldpoints.webp');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+#city-popup {
+  /*display: none; /* Hidden by default */
+  position: fixed; /* Fixed position relative to the viewport */
+  z-index: 3000; /* Ensure it appears above other elements */
+  padding: 10px; /* Space inside the popup */
+  background: white; /* Background color */
+  color: black; /* Text color */
+  border: 1px solid #FFF; /* Border properties */
+  border-radius: 8px; /* Rounded corners */
+  /*(opacity: 1; */
+  opacity : .2;
+  transform: translate(-50%, -50%);
+  /* Add more styles for the popup appearance */
+  /* Wavy border styling goes here, potentially with an SVG background */
+}
+
+/* Custom Cursor Styles */
+#custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000; /* Make sure it is on top of all other elements */
+    transform: translate(-50%, -50%); /* Center the text */
+    transition: transform 0.1s, background 0.3s; /* Smooth transition for moving and changing */
+    padding: 10px;
+    border-radius: 30px; /* Rounded corners */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 14px;
+    user-select: none;
+    opacity: 0; /* Start with the cursor hidden */
+   
+}
+
+.scroll-cursor {
+    /* Styles for the "scroll down" cursor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 400px;
+    min-width: 200px;
+    min-height: 80px;
+}
+
+/* Custom Cursor Styles */
+.bullseye-cursor {
+  /* Updated styles for the futuristic cursor */
+  width: 8px; /* Size of the cursor */
+  height: 8px;
+  /*background: url('/static/democratize/futurecursor.png') no-repeat center center; /* Ensure this path is correct */
+  background: url('/static/democratize/futurecursor.png') no-repeat center center;
+  background-size: 8px 8px; /* Size of the image to prevent stretching */
+  border: blue; /* Remove any border */
+  fill: [purple];
+  /*border-radius: ; /* No border radius */
+  opacity: .1; /* Fully visible */
+  display: block;
+  padding: 0;
+  text-indent: -9999px; /* Hide the text off-screen */
+  background-image: image('/democratize/futurecursor.png');
+}
+
+/* Initial animation for cursor appearance */
+body:hover #custom-cursor {
+    opacity: 1; /* Show the cursor when hovering over the body */
+}
+
+.popup {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.7s, visibility 0.7s;
+  opacity: .5
+  ;
+  visibility: hidden;
+  /* Add more styles for the appearance of the popup */
+}
+.popup-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.water-ripple-effect {
+  /* Add your ripple effect animation here */
+  background: url('path-to-ripple-effect.png') repeat;
+  animation: ripple-animation 1s infinite;
+}
+
+@keyframes ripple-animation {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; } /* Adjust this as needed for your ripple effect */
+}
+/* Add this inside your styles.css */
+.button-container {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px; /* Space between buttons */
+}
+
+.futuristic-btn {
+  padding: 10px 20px; /* Button padding */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border: 1px solid #00fffc; /* Cyan color border */
+  color: #00fffc; /* Cyan text color */
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease;
+  text-decoration: none; /* Removes underline from links */
+}
+
+.futuristic-btn:hover {
+  background: #00fffc; /* Cyan background on hover */
+  color: #000; /* Text color change on hover */
+  cursor: pointer;
+}
+.city {
+  z-index: 3000; /* Higher than nav to ensure they are clickable */
+}
+.city:hover {
+  cursor: pointer; /* Indicates a clickable city */
+}
