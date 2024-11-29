@@ -60,7 +60,44 @@
             background-color: #161b22;
             color: #8b949e;
         }
+        .code-box {
+            background-color: #e9ecef;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: monospace;
+            position: relative;
+        }
+        .code-box button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .code-box button:hover {
+            background-color: #004494;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
     </style>
+    <script>
+        function copyToClipboard(button, code) {
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = "Copied!";
+                setTimeout(() => (button.textContent = "Copy Code"), 2000);
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -68,42 +105,102 @@
     </header>
     <div class="container">
         <section class="blog-section">
-            <h2>Welcome to the Django Python / LLM Academy</h2>
-            <p>
-                This is a space for learning the fundamentals of Python, Django, and the latest advancements in Generative AI. 
-                Scroll through the content, and check out the links on the right to view interactive video lessons. The blog
-                covers essential topics in AI and programming that will help you level up your skills!
-            </p>
-            <p>
-                Topics include Generative AI, Django web development, and Python programming for large-scale language models.
-            </p>
+            <h2>Django Installation Guide</h2>
+
+            <section>
+                <h3>1. The Basics of How to Install Django</h3>
+                <ul>
+                    <li>Install Python (version 3.5 or higher).</li>
+                    <li>Create a virtual environment for isolating project dependencies.</li>
+                    <li>Install Django using pip.</li>
+                    <li>Verify the installation of Django.</li>
+                    <li>Start a new Django project.</li>
+                    <li>Run the development server to test your setup.</li>
+                </ul>
+                <div class="code-box">
+                    <button onclick="copyToClipboard(this, 'python3 -m venv env\\nsource env/bin/activate\\npip install django\\ndjango-admin startproject myproject\\npython manage.py runserver')">Copy Code</button>
+<pre>
+python3 -m venv env
+source env/bin/activate
+pip install django
+django-admin startproject myproject
+python manage.py runserver
+</pre>
+                </div>
+            </section>
+
+            <section>
+                <h3>2. How to Install Django on an Ubuntu Server</h3>
+                <ul>
+                    <li>Install Python and other required packages using apt.</li>
+                    <li>Create a virtual environment and activate it.</li>
+                    <li>Install Django using pip.</li>
+                    <li>Set up a Django project and configure a web server like Nginx or Apache for production.</li>
+                </ul>
+                <div class="code-box">
+                    <button onclick="copyToClipboard(this, 'sudo apt update\\nsudo apt install python3 python3-venv python3-pip\\npython3 -m venv env\\nsource env/bin/activate\\npip install django\\ndjango-admin startproject myproject\\npython manage.py runserver 0.0.0.0:8000')">Copy Code</button>
+<pre>
+sudo apt update
+sudo apt install python3 python3-venv python3-pip
+python3 -m venv env
+source env/bin/activate
+pip install django
+django-admin startproject myproject
+python manage.py runserver 0.0.0.0:8000
+</pre>
+                </div>
+            </section>
+
+            <section>
+                <h3>3. How to Install Django on a Windows Server</h3>
+                <ul>
+                    <li>Install Python and ensure it's added to the system PATH.</li>
+                    <li>Create and activate a virtual environment.</li>
+                    <li>Install Django using pip.</li>
+                    <li>Set up a Django project and configure IIS or another web server for production.</li>
+                </ul>
+                <div class="code-box">
+                    <button onclick="copyToClipboard(this, 'python -m venv env\\nenv\\Scripts\\activate\\npip install django\\ndjango-admin startproject myproject\\npython manage.py runserver')">Copy Code</button>
+<pre>
+python -m venv env
+env\Scripts\activate
+pip install django
+django-admin startproject myproject
+python manage.py runserver
+</pre>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. What Are the Main Differences</h3>
+                <ul>
+                    <li><strong>Package Installation:</strong> Ubuntu uses apt for system dependencies, while Windows relies on the Python installer.</li>
+                    <li><strong>Virtual Environment:</strong> Different folder structures (`bin` in Ubuntu, `Scripts` in Windows).</li>
+                    <li><strong>Web Server Integration:</strong> Ubuntu often uses Nginx/Apache, while Windows uses IIS.</li>
+                    <li><strong>File Permissions:</strong> Ubuntu requires manual permission management, while Windows uses GUI or PowerShell.</li>
+                    <li><strong>Static File Management:</strong> Explicit IIS configuration is needed on Windows for serving static files.</li>
+                    <li><strong>Environment Variables:</strong> Ubuntu handles them easily with `.env` files and shell, while Windows requires GUI or `set` commands.</li>
+                    <li><strong>Path Differences:</strong> Ubuntu uses forward slashes (`/`), and Windows uses backslashes (`\`).</li>
+                    <li><strong>Case Sensitivity:</strong> Ubuntu is case-sensitive, while Windows is not by default.</li>
+                </ul>
+            </section>
         </section>
         <aside class="links-section">
             <h3>Class Videos</h3>
             <div class="video-preview" onclick="window.open('https://youtu.be/99jnctfKJwo', '_blank')">
                 <img src="https://img.youtube.com/vi/99jnctfKJwo/0.jpg" alt="Preface">
-                <p>Preface</p>
+                <p>Preface - Explanation of the Django Python Server installation process</p>
             </div>
             <div class="video-preview" onclick="window.open('https://youtu.be/-9r-HueYXmI', '_blank')">
                 <img src="https://img.youtube.com/vi/-9r-HueYXmI/0.jpg" alt="Lesson 1 Installing A Django Python Server">
-                <p>Lesson 1</p>
+                <p>Lesson 1 Installing A Django Python Server</p>
             </div>
             <div class="video-preview" onclick="window.open('https://youtu.be/GiaxQfxI6r8', '_blank')">
                 <img src="https://img.youtube.com/vi/GiaxQfxI6r8/0.jpg" alt="Lesson 1 Installing A Django Python Server Continued">
-                <p>Lesson 1 Continued</p>
+                <p>Lesson 1 Installing A Django Python Server Continued</p>
             </div>
             <div class="video-preview" onclick="window.open('https://youtu.be/W8CvRmzdpjY', '_blank')">
                 <img src="https://img.youtube.com/vi/W8CvRmzdpjY/0.jpg" alt="Lesson 1 Installing A Django Python Server Final Part">
-                <p>Lesson 1 Final Part</p>
+                <p>Lesson 1 Installing A Django Python Server Final Part</p>
             </div>
-            <div class="video-preview" onclick="window.open('https://youtu.be/iNl7wKaujKA', '_blank')">
-                <img src="https://img.youtube.com/vi/iNl7wKaujKA/0.jpg" alt="Lesson 2 Creating a Django Python Project">
-                <p>Lesson 2</p>
-            </div>
-        </aside>
-    </div>
-    <footer>
-        &copy; 2024 Django Python / LLM Academy. All rights reserved.
-    </footer>
-</body>
-</html>
+            <div class="video
